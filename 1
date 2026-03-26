@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#include <typeinfo>
+using namespace std;
+
+int ix = 2;
+double dx = 3.5;
+float fx = 4.55;
+char cx = '3';
+bool bx = true;
+
+int main() {
+    cout<<"преобразование результат типданных:"<<endl;
+    int idx = static_cast<int>(dx);
+    double ddx = static_cast<double>(idx);
+    cout << "int → double "<< idx <<" "<< typeid(idx).name() << endl;
+    cout << "double → int "<< ddx <<" "<< typeid(ddx).name() << endl;
+    
+    float fdx = static_cast<float>(dx);
+    double ffdx = static_cast<double>(fdx);
+    cout << "double → float "<< fdx <<" "<< typeid(fdx).name() << endl;
+    cout << "float → double "<< ffdx <<" "<< typeid(ffdx).name() << endl;
+    
+    int icx = static_cast<int>(cx);
+    cout << "char → int "<< icx <<" "<< typeid(icx).name() << endl;
+    
+    char cix = static_cast<char>(ix);
+    cout << "int → char "<< cix <<" "<< typeid(cix).name() << endl;
+    
+    int bxx = static_cast<int>(bx);
+    bool bbix = static_cast<bool>(bxx);
+    cout << "bool → int "<< bxx <<" "<< typeid(bxx).name() << endl;
+    cout << "int → bool "<< bbix <<" "<< typeid(bbix).name() << endl;
+}
