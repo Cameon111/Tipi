@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#include <vector>
+using namespace std;
+
+class Shape{
+  public:
+    virtual double area() const = 0;
+    virtual void print() const;
+};
+
+class Circle : public Shape{
+  private:
+    double radius;
+    double pi = 3.14159;
+  public:
+    double area(){
+        return pi*radius*radius;
+    }
+};
+
+
+class Rectangle : public Shape{
+    private:
+        double width;
+        double heigh;
+    public:
+        double area(){
+            return width*heigh;
+        }
+};
+
+
+int main() {
+    vector<Shape*> arr;
+    arr.push_back(new Circle(4.0));
+    arr.push_back(new Rectangle(3.4, 5.7));
+    for (const auto& shape : arr) {
+        shape->print();
+    }
+}
